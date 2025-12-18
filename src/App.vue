@@ -3,6 +3,7 @@
     <NavBar @open-contact-modal="openContactModal" />
     <HeroSection />
     <ServicesSection />
+    <SignatureServicesSection />
     <AboutSection />
     <ContactSection @open-contact-modal="openContactModal" />
     <FooterSection />
@@ -15,6 +16,7 @@ import { ref } from 'vue'
 import NavBar from './components/NavBar.vue'
 import HeroSection from './components/HeroSection.vue'
 import ServicesSection from './components/ServicesSection.vue'
+import SignatureServicesSection from './components/SignatureServicesSection.vue'
 import AboutSection from './components/AboutSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import FooterSection from './components/FooterSection.vue'

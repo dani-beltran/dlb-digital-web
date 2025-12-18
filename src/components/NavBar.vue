@@ -3,6 +3,7 @@
     <div class="logo" @click.prevent="scrollToSection('hero')">DLB Digital</div>
     <ul class="nav-links">
       <li><a href="#services" @click.prevent="scrollToSection('services')">Services</a></li>
+      <li><a href="#signature-services" @click.prevent="scrollToSection('signature-services')">Signature Services</a></li>
       <li><a href="#about" @click.prevent="scrollToSection('about')">About</a></li>
       <li><a href="#" @click.prevent="openContactModal">Contact</a></li>
     </ul>
