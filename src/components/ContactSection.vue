@@ -5,24 +5,15 @@
     <button @click="openModal" class="contact-btn">
       Get In Touch →
     </button>
-    
-    <ContactFormModal :isOpen="isModalOpen" @close="closeModal" />
   </section>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import ContactFormModal from './ContactFormModal.vue';
-
-const isModalOpen = ref(false);
+const emit = defineEmits(['open-contact-modal'])
 
 const openModal = () => {
-  isModalOpen.value = true;
-};
-
-const closeModal = () => {
-  isModalOpen.value = false;
-};
+  emit('open-contact-modal')
+}
 </script>
 
 <style scoped>

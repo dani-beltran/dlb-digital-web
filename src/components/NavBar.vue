@@ -4,13 +4,19 @@
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#" @click.prevent="openContactModal">Contact</a></li>
     </ul>
   </nav>
 </template>
 
 <script setup>
 import { onMounted } from 'vue'
+
+const emit = defineEmits(['open-contact-modal'])
+
+const openContactModal = () => {
+  emit('open-contact-modal')
+}
 
 onMounted(() => {
   const nav = document.getElementById('nav')
