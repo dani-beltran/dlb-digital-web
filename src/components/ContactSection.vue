@@ -2,14 +2,27 @@
   <section id="contact" class="contact">
     <h2 class="section-title">Let's Build Something Great</h2>
     <p class="section-subtitle">Ready to start your next project? Get in touch with us today.</p>
-    <a href="mailto:hello@dlbdigital.com" class="contact-btn">
+    <button @click="openModal" class="contact-btn">
       Get In Touch →
-    </a>
+    </button>
+    
+    <ContactFormModal :isOpen="isModalOpen" @close="closeModal" />
   </section>
 </template>
 
 <script setup>
-// No script needed for static content
+import { ref } from 'vue';
+import ContactFormModal from './ContactFormModal.vue';
+
+const isModalOpen = ref(false);
+
+const openModal = () => {
+  isModalOpen.value = true;
+};
+
+const closeModal = () => {
+  isModalOpen.value = false;
+};
 </script>
 
 <style scoped>
