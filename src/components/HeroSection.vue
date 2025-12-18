@@ -4,7 +4,7 @@
       <div class="hero-content">
         <h1>Building Digital Excellence</h1>
         <p>We craft innovative software solutions that transform businesses and drive growth in the digital age.</p>
-        <a href="#services" class="cta-btn">Explore Our Work</a>
+        <a href="#services" class="cta-btn">Explore Our Services</a>
       </div>
     </BackgroundGrid>
   </section>
