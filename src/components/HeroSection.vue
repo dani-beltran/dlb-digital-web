@@ -1,13 +1,13 @@
 <template>
-  <section id="hero" class="hero">
     <BackgroundGrid>
-      <div class="hero-content">
-        <h1>Building Digital Excellence</h1>
-        <p>We craft innovative software solutions that transform businesses and drive growth in the digital age.</p>
-        <a href="#services" class="cta-btn">Explore Our Services</a>
-      </div>
+      <section id="hero" class="hero">
+        <div class="hero-content">
+          <h1>Building Digital Excellence</h1>
+          <p>We craft innovative software solutions that transform businesses and drive growth in the digital age.</p>
+          <a href="#services" class="cta-btn">Explore Our Services</a>
+        </div>
+      </section>
     </BackgroundGrid>
-  </section>
 </template>
 
 <script setup>
@@ -15,8 +15,13 @@ import BackgroundGrid from './BackgroundGrid.vue';
 </script>
 
 <style scoped>
+
 .hero {
   height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-content {
