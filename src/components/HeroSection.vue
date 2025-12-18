@@ -1,5 +1,5 @@
 <template>
-  <section class="hero">
+  <section id="hero" class="hero">
     <BackgroundGrid>
       <div class="hero-content">
         <h1>Building Digital Excellence</h1>

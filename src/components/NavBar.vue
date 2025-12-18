@@ -1,9 +1,9 @@
 <template>
   <nav id="nav">
-    <div class="logo">DLB Digital</div>
+    <div class="logo" @click.prevent="scrollToSection('hero')">DLB Digital</div>
     <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="#services" @click.prevent="scrollToSection('services')">Services</a></li>
+      <li><a href="#about" @click.prevent="scrollToSection('about')">About</a></li>
       <li><a href="#" @click.prevent="openContactModal">Contact</a></li>
     </ul>
   </nav>
@@ -16,6 +16,19 @@ const emit = defineEmits(['open-contact-modal'])
 
 const openContactModal = () => {
   emit('open-contact-modal')
+}
+
+const scrollToSection = (sectionId) => {
+  const section = document.getElementById(sectionId)
+  if (section) {
+    const navHeight = document.getElementById('nav').offsetHeight
+    const sectionTop = section.offsetTop - navHeight - 20 // 20px extra offset
+    
+    window.scrollTo({
+      top: sectionTop,
+      behavior: 'smooth'
+    })
+  }
 }
 
 onMounted(() => {
@@ -54,6 +67,12 @@ nav.scrolled {
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.5px;
+  cursor: pointer;
+}
+
+.logo:hover {
+  transform: scale(1.025);
+  transition: transform 0.3s;
 }
 
 .nav-links {
