@@ -1,10 +1,10 @@
 <template>
   <nav id="nav">
-    <div class="logo" @click.prevent="scrollToSection('hero')">DLB Digital</div>
+    <div class="logo" @click.prevent="navigateToSection('hero')">DLB Digital</div>
     <ul class="nav-links">
-      <li><a href="#services" @click.prevent="scrollToSection('services')">Services</a></li>
-      <li><a href="#signature-services" @click.prevent="scrollToSection('signature-services')">Signature Services</a></li>
-      <li><a href="#about" @click.prevent="scrollToSection('about')">About</a></li>
+      <li><a href="#services" @click.prevent="navigateToSection('services')">Services</a></li>
+      <li><a href="#signature-services" @click.prevent="navigateToSection('signature-services')">Signature Services</a></li>
+      <li><a href="#about" @click.prevent="navigateToSection('about')">About</a></li>
       <li><a href="#" @click.prevent="openContactModal">Contact</a></li>
     </ul>
   </nav>
@@ -12,11 +12,28 @@
 
 <script setup>
 import { onMounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 
 const emit = defineEmits(['open-contact-modal'])
+const router = useRouter()
+const route = useRoute()
 
 const openContactModal = () => {
   emit('open-contact-modal')
+}
+
+const navigateToSection = (sectionId) => {
+  if (route.path !== '/') {
+    // Navigate to home first, then scroll to section
+    router.push('/').then(() => {
+      setTimeout(() => {
+        scrollToSection(sectionId)
+      }, 100)
+    })
+  } else {
+    // Already on home, just scroll
+    scrollToSection(sectionId)
+  }
 }
 
 const scrollToSection = (sectionId) => {
