@@ -1,16 +1,33 @@
 # DLB Digital Blog
 
-Your source for insights on software development, digital solutions, and business technology strategy.
+Welcome to our blog!
+Get to know more about how we help businesses thrive in the digital age.
 
 ## About This Blog
 
-At DLB Digital, we believe in sharing knowledge and empowering businesses to make informed decisions about their technology investments. Our blog covers topics ranging from software maintenance best practices to development strategies, digital transformation, and emerging technologies.
+At DLB Digital, we believe in sharing knowledge and empowering businesses to make informed decisions about their technology investments.
 
 Whether you're a startup founder, a CTO, or a business owner looking to leverage technology for growth, you'll find practical insights and actionable advice here.
 
 ---
 
 ## Latest Articles
+
+### [How to Build an MVP and Launch Your Startup Idea Quickly and Economically](./mvp)
+
+**Published:** December 2025
+
+Launching a startup is exhilarating, but it's also fraught with risk. You have a brilliant idea, but how do you validate it without burning through your savings or spending years in development? This comprehensive guide explores how to build a Minimum Viable Product (MVP) that allows you to test your core hypothesis with real users quickly and economically.
+
+**Topics covered:**
+- Identifying your core value proposition
+- Choosing the right MVP approach
+- Building fast and cheap with no-code tools
+- Measuring what matters for validation
+
+[Read more →](./mvp)
+
+---
 
 ### [Why Your Business Needs a Software Maintenance Retainer](./maintenance-retainer)
 
