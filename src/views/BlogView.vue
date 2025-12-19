@@ -1,7 +1,7 @@
 <template>
   <div class="blog-container">
-    <div class="blog-header">
-      <router-link v-if="route.params.slug !== 'home'" to="/blog/home" class="back-link">← Blog Home</router-link>
+    <div v-if="route.params.slug !== 'home'" class="blog-header">
+      <router-link to="/blog/home" class="back-link">← Blog Home</router-link>
     </div>
     
     <article class="blog-article">
