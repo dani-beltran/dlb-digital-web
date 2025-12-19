@@ -34,6 +34,7 @@ const openModal = () => {
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s;
+  cursor: pointer;
 }
 
 .contact-btn:hover {

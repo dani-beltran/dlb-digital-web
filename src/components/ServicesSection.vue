@@ -36,7 +36,6 @@ const services = [
   border: 1px solid var(--border);
   border-radius: 12px;
   transition: all 0.4s;
-  cursor: pointer;
 }
 
 .service-card:hover {
