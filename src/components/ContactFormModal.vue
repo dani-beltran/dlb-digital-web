@@ -78,7 +78,7 @@
 
 <script setup>
 import { ref, watch } from 'vue';
-import emailjs from '@emailjs/browser';
+import { sendEmail } from '../services/emailService';
 
 const props = defineProps({
   isOpen: {
@@ -99,12 +99,6 @@ const formData = ref({
 const isSubmitting = ref(false);
 const statusMessage = ref('');
 const statusType = ref(''); // 'success' or 'error'
-
-// Initialize EmailJS with your public key
-// Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
-const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
 
 const resetForm = () => {
   formData.value = {
@@ -129,37 +123,27 @@ const handleSubmit = async () => {
   isSubmitting.value = true;
   statusMessage.value = '';
 
-  try {
-    // Send email using EmailJS
-    const response = await emailjs.send(
-      EMAILJS_SERVICE_ID,
-      EMAILJS_TEMPLATE_ID,
-      {
-        from_name: formData.value.name,
-        from_email: formData.value.email,
-        subject: formData.value.subject,
-        message: formData.value.message,
-        to_name: 'DLB Digital', // Your company name
-      },
-      EMAILJS_PUBLIC_KEY
-    );
+  const result = await sendEmail({
+    name: formData.value.name,
+    email: formData.value.email,
+    subject: formData.value.subject,
+    message: formData.value.message
+  });
 
-    if (response.status === 200) {
-      statusMessage.value = 'Message sent successfully! We\'ll get back to you soon.';
-      statusType.value = 'success';
-      
-      // Close modal after 2 seconds on success
-      setTimeout(() => {
-        closeModal();
-      }, 2000);
-    }
-  } catch (error) {
-    console.error('EmailJS Error:', error);
-    statusMessage.value = 'Failed to send message. Please try again or email us directly.';
+  if (result.success) {
+    statusMessage.value = result.message;
+    statusType.value = 'success';
+    
+    // Close modal after 2 seconds on success
+    setTimeout(() => {
+      closeModal();
+    }, 2000);
+  } else {
+    statusMessage.value = result.message;
     statusType.value = 'error';
-  } finally {
-    isSubmitting.value = false;
   }
+
+  isSubmitting.value = false;
 };
 
 // Close modal on Escape key
