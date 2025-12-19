@@ -4,13 +4,14 @@
         <div class="hero-content">
           <h1>Building Digital Excellence</h1>
           <p>We craft innovative software solutions that transform businesses and drive growth in the digital age.</p>
-          <a href="#services" class="cta-btn">Explore Our Services</a>
+          <a href="#" class="cta-btn" @click.prevent="scrollToSection('services')">Explore Our Services</a>
         </div>
       </section>
     </BackgroundGrid>
 </template>
 
 <script setup>
+import { scrollToSection } from '../utils/navigation';
 import BackgroundGrid from './BackgroundGrid.vue';
 </script>
 

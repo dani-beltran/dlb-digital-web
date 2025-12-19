@@ -23,6 +23,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
+import { scrollToSection } from '../utils/navigation'
 
 const emit = defineEmits(['open-contact-modal'])
 const router = useRouter()
@@ -67,19 +68,6 @@ const navigateToHomeSection = (sectionId) => {
   } else {
     // Already on home, just scroll
     scrollToSection(sectionId)
-  }
-}
-
-const scrollToSection = (sectionId) => {
-  const section = document.getElementById(sectionId)
-  if (section) {
-    const navHeight = document.getElementById('nav').offsetHeight
-    const sectionTop = section.offsetTop - navHeight - 20 // 20px extra offset
-    
-    window.scrollTo({
-      top: sectionTop,
-      behavior: 'smooth'
-    })
   }
 }
 
