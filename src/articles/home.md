@@ -103,4 +103,4 @@ New articles are published regularly. Check back often for fresh insights on sof
 
 ## 
 
-*Have questions or topics you'd like us to cover? Contact us at [hello@dlbdigital.com](mailto:hello@dlbdigital.com) to let us know.*
+*Have questions or topics you'd like us to cover? Contact us at [hello@dlbdigital.dev](mailto:hello@dlbdigital.dev) to let us know.*

@@ -96,4 +96,4 @@ Let's talk about how we can help your team harness AI productivity while buildin
 
 ## 
 
-**Ready to Build Faster Without Sacrificing Quality?** Contact us at [hello@dlbdigital.com](mailto:hello@dlbdigital.com) to discuss how our partnership approach can help you maximize the benefits of AI-assisted development.
+**Ready to Build Faster Without Sacrificing Quality?** Contact us at [hello@dlbdigital.dev](mailto:hello@dlbdigital.dev) to discuss how our partnership approach can help you maximize the benefits of AI-assisted development.

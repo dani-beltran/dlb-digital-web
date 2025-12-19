@@ -42,4 +42,4 @@ Your data, your customers, and your business reputation are too valuable to leav
 
 ## 
 
-**Don't wait until after an incident to take security seriously.** Contact us today at [hello@dlbdigital.com](mailto:hello@dlbdigital.com) to schedule a comprehensive security audit and learn how our hardening services can transform your digital infrastructure into a resilient fortress that protects what matters most.
+**Don't wait until after an incident to take security seriously.** Contact us today at [hello@dlbdigital.dev](mailto:hello@dlbdigital.dev) to schedule a comprehensive security audit and learn how our hardening services can transform your digital infrastructure into a resilient fortress that protects what matters most.

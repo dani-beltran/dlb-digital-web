@@ -70,4 +70,4 @@ Don't let poor performance hold your business back. Invest in optimization today
 
 ## 
 
-**Ready to optimize your application for global scale and high demand?** Contact us today at [hello@dlbdigital.com](mailto:hello@dlbdigital.com) to discuss how we can help you build systems that thrive under pressure.
+**Ready to optimize your application for global scale and high demand?** Contact us today at [hello@dlbdigital.dev](mailto:hello@dlbdigital.dev) to discuss how we can help you build systems that thrive under pressure.

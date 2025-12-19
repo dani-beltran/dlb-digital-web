@@ -65,4 +65,4 @@ Your software powers your business. Isn't it time to give it the consistent, exp
 
 ## 
 
-**Ready to explore how a maintenance retainer can transform your software management?** Contact us today at [hello@dlbdigital.com](mailto:hello@dlbdigital.com) to discuss a custom retainer package designed around your specific needs and goals.
+**Ready to explore how a maintenance retainer can transform your software management?** Contact us today at [hello@dlbdigital.dev](mailto:hello@dlbdigital.dev) to discuss a custom retainer package designed around your specific needs and goals.
