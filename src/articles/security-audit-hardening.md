@@ -34,8 +34,12 @@ While some organizations attempt to handle hardening internally, the complexity 
 
 Perhaps most importantly, we provide ongoing monitoring and maintenance, ensuring your hardened systems remain secure as new threats emerge. Security hardening isn't a destination—it's a journey that requires constant vigilance and adaptation.
 
-## Protecting What Matters Most
-
 Your data, your customers, and your business reputation are too valuable to leave inadequately protected. In an environment where a single breach can cost millions in damages, lost business, and regulatory penalties, professional security audit and hardening services represent not an expense, but an investment in business continuity and resilience.
 
-Don't wait until after an incident to take security seriously. Contact us today at [hello@dlbdigital.com](mailto:hello@dlbdigital.com) to schedule a comprehensive security audit and learn how our hardening services can transform your digital infrastructure into a resilient fortress that protects what matters most.
+## 
+
+---
+
+## 
+
+**Don't wait until after an incident to take security seriously.** Contact us today at [hello@dlbdigital.com](mailto:hello@dlbdigital.com) to schedule a comprehensive security audit and learn how our hardening services can transform your digital infrastructure into a resilient fortress that protects what matters most.
