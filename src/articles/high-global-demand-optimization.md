@@ -32,11 +32,11 @@ Clean, efficient code isn't just easier to maintain—it's faster to execute. We
 
 ### Frontend and Network Performance
 
-Speed isn't just about backend processing. We optimize the entire user experience by implementing Content Delivery Networks for static assets, compressing data transmission, and minimizing HTTP requests. Every millisecond saved in data transfer is a millisecond gained in user satisfaction.
+Speed isn't just about backend processing. We optimize the entire user experience by implementing Content Delivery Networks (CDNs) for static assets, compressing data transmission, and minimizing HTTP requests. Every millisecond saved in data transfer is a millisecond gained in user satisfaction.
 
 ### Continuous Monitoring and Profiling
 
-Optimization isn't a one-time project—it's an ongoing commitment. We use advanced profiling tools to continuously monitor your application's performance, identify emerging bottlenecks before they become problems, and benchmark improvements to ensure your systems are always running at peak efficiency.
+Optimization isn't a one-time project—it's an ongoing commitment. We use advanced profiling tools, like Grafana and Prometheus, to continuously monitor your application's performance, identify emerging bottlenecks before they become problems, and benchmark improvements to ensure your systems are always running at peak efficiency.
 
 ## Why This Matters for Your Business
 
