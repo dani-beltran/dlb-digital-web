@@ -1,18 +1,26 @@
 <template>
   <div class="blog-container">
     <div class="blog-header">
-      <router-link to="/" class="back-link">← Back to Home</router-link>
+      <router-link v-if="route.params.slug !== 'home'" to="/blog/home" class="back-link">← Blog Home</router-link>
     </div>
     
     <article class="blog-article">
-      <div class="blog-content" v-html="renderedMarkdown"></div>
+      <div v-if="loading" class="loading">Loading article...</div>
+      <div v-else-if="error" class="error">{{ error }}</div>
+      <div v-else class="blog-content" v-html="renderedMarkdown"></div>
     </article>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue'
+import { ref, onMounted, computed, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import MarkdownIt from 'markdown-it'
+
+const route = useRoute()
+const markdownContent = ref('')
+const loading = ref(true)
+const error = ref(null)
 
 const md = new MarkdownIt({
   html: true,
@@ -20,55 +28,36 @@ const md = new MarkdownIt({
   typographer: true
 })
 
-// Sample markdown content - replace this with your own content or load from a file/API
-const markdownContent = ref(`
-# Welcome to My Blog
-
-This is a blog post written in **Markdown**. You can use all standard markdown features:
-
-## Features
-
-- **Bold text**
-- *Italic text*
-- [Links](https://example.com)
-- Lists
-- Code blocks
-
-### Code Example
-
-\`\`\`javascript
-function greet(name) {
-  console.log(\`Hello, \${name}!\`)
-}
-
-greet('World')
-\`\`\`
-
-### Blockquotes
-
-> This is a blockquote. You can write longer text here.
-
-### Images
-
-You can also include images using markdown syntax:
-
-![Placeholder](https://via.placeholder.com/600x300)
-
-## Conclusion
-
-This blog page can render any markdown content you provide!
-`)
-
 const renderedMarkdown = computed(() => {
   return md.render(markdownContent.value)
 })
 
+
+const loadArticle = async (name) => {
+  try {
+    loading.value = true
+    error.value = null
+
+    // Import the markdown file dynamically
+    const article = await import(`../articles/${name}.md?raw`)
+    markdownContent.value = article.default
+  } catch (err) {
+    error.value = 'Article not found'
+    console.error('Error loading article:', err)
+  } finally {
+    loading.value = false
+  }
+}
+
 onMounted(() => {
-  // You could load markdown content from a file or API here
-  // For example:
-  // fetch('/path/to/markdown/file.md')
-  //   .then(response => response.text())
-  //   .then(text => markdownContent.value = text)
+  window.scrollTo(0, 0)
+  const slug = route.params.slug || 'home'
+  loadArticle(slug)
+})
+
+watch(() => route.params.slug, (newSlug) => {
+  window.scrollTo(0, 0)
+  loadArticle(newSlug || 'home')
 })
 </script>
 
@@ -81,7 +70,7 @@ onMounted(() => {
 }
 
 .blog-header {
-  max-width: 1400px;
+  max-width: 800px;
   margin: 0 auto 2rem;
 }
 
@@ -94,6 +83,7 @@ onMounted(() => {
   border-radius: 8px;
   display: inline-block;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .back-link:hover {
@@ -102,7 +92,7 @@ onMounted(() => {
 }
 
 .blog-article {
-  max-width: 1400px;
+  max-width: 800px;
   margin: 0 auto;
   background: white;
   border-radius: 16px;
@@ -223,6 +213,18 @@ onMounted(() => {
 .blog-content :deep(em) {
   font-style: italic;
   color: #444;
+}
+
+.blog-content .loading,
+.blog-content .error {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 3rem;
+  color: #555;
+}
+
+.blog-content .error {
+  color: #d32f2f;
 }
 
 @media (max-width: 768px) {

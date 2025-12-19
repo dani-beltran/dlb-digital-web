@@ -1,10 +1,11 @@
 <template>
   <nav id="nav">
-    <div class="logo" @click.prevent="navigateToSection('hero')">DLB Digital</div>
+    <div class="logo" @click.prevent="navigateToHomeSection('hero')">DLB Digital</div>
     <ul class="nav-links">
-      <li><a href="#services" @click.prevent="navigateToSection('services')">Services</a></li>
-      <li><a href="#signature-services" @click.prevent="navigateToSection('signature-services')">Signature Services</a></li>
-      <li><a href="#about" @click.prevent="navigateToSection('about')">About</a></li>
+      <li><a href="#services" @click.prevent="navigateToHomeSection('services')">Services</a></li>
+      <li><a href="#signature-services" @click.prevent="navigateToHomeSection('signature-services')">Signature Services</a></li>
+      <li><a href="#about" @click.prevent="navigateToHomeSection('about')">About</a></li>
+      <li><a href="#blog" @click.prevent="navigateToBlog()">Blog</a></li>
       <li><a href="#" @click.prevent="openContactModal">Contact</a></li>
     </ul>
   </nav>
@@ -22,7 +23,7 @@ const openContactModal = () => {
   emit('open-contact-modal')
 }
 
-const navigateToSection = (sectionId) => {
+const navigateToHomeSection = (sectionId) => {
   if (route.path !== '/') {
     // Navigate to home first, then scroll to section
     router.push('/').then(() => {
@@ -47,6 +48,10 @@ const scrollToSection = (sectionId) => {
       behavior: 'smooth'
     })
   }
+}
+
+const navigateToBlog = (article = 'home') => {
+  router.push('/blog/' + article)
 }
 
 onMounted(() => {
