@@ -12,7 +12,7 @@
     <!-- Navigation Links -->
     <ul class="nav-links" :class="{ active: isMenuOpen }">
       <li><a href="#services" @click.prevent="handleNavClick('services')">Services</a></li>
-      <li><a href="#signature-services" @click.prevent="handleNavClick('signature-services')">Signature Services</a></li>
+      <li><a href="#specialties" @click.prevent="handleNavClick('specialties')">Specialties</a></li>
       <li><a href="#about" @click.prevent="handleNavClick('about')">About</a></li>
       <li><a href="#blog" @click.prevent="handleBlogClick()">Blog</a></li>
       <li><a href="#" @click.prevent="handleContactClick">Contact</a></li>

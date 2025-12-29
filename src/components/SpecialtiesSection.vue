@@ -1,8 +1,8 @@
 <template>
-  <section id="signature-services">
-    <h2 class="section-title">Our Signature Services</h2>
+  <section id="specialties">
+    <h2 class="section-title">Our Specialties</h2>
     <p class="section-subtitle">Specialized solutions designed to accelerate your success and overcome technical challenges</p>
-    <div class="signature-services-grid">
+    <div class="specialties-grid">
       <div class="signature-service-card" v-for="service in signatureServices" :key="service.title">
         <div class="service-icon">{{ service.icon }}</div>
         <h3>{{ service.title }}</h3>
@@ -48,7 +48,7 @@ const signatureServices = [
 </script>
 
 <style scoped>
-.signature-services-grid {
+.specialties-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
@@ -118,7 +118,7 @@ const signatureServices = [
 }
 
 @media (max-width: 768px) {
-  .signature-services-grid {
+  .specialties-grid {
     grid-template-columns: 1fr;
   }
   
